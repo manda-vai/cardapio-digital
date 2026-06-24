@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍽️ Cardápio Digital
 
-## Getting Started
+Plataforma de **cardápio digital** para restaurantes, lanchonetes e estabelecimentos alimentícios. Pedidos via **WhatsApp** — sem necessidade de checkout ou gateway de pagamento.
 
-First, run the development server:
+## ✨ Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 🏪 Cardápio Público (`/cardapio/[slug]`)
+- Cardápio completo com categorias e busca
+- Visualização de itens com fotos, descrição e preços
+- Modificadores e variações (tamanhos, adicionais)
+- Layout responsivo (mobile-first)
+- Dark mode automático
+
+### 🛒 Pedido com WhatsApp (`/pedido/[slug]`)
+- Carrinho completo com quantidade e modificadores
+- Resumo do pedido com valores totais
+- **Geração de mensagem formatada para WhatsApp**
+- Sem checkout — envia direto para o WhatsApp do estabelecimento
+
+### ⚙️ Painel Admin (`/admin`)
+- **Dashboard** com estatísticas de pedidos e faturamento
+- **Gestão de Cardápio** (CRUD): adicionar/editar/remover itens e categorias
+- **Configurações da Loja**: nome, WhatsApp, endereço, horários, logo
+- **Gestão de Pedidos**: acompanhar status (pendente → preparando → pronto → entregue)
+
+### ♿ Acessibilidade (WCAG AA)
+- Navegação por teclado em todos os componentes
+- Roles e atributos ARIA (tabs, dialog, switch)
+- Focus trap em modais e drawers
+- Contraste mínimo 4.5:1
+- Suporte a `prefers-reduced-motion`
+
+## 🏗️ Stack
+
+| Tecnologia | Versão | Uso |
+|------------|--------|-----|
+| **Next.js** | 16 (App Router) | Framework full-stack |
+| **TypeScript** | Strict | Tipagem segura |
+| **Tailwind CSS** | v4 | Estilização utilitária |
+| **pnpm** | 11.x | Gerenciador de pacotes |
+
+### Design System
+- **Atomic Design**: atoms → molecules → organisms → pages
+- **Material Design 3**: tokens de cores, tipografia, elevação, bordas
+- **Geist**: tipografia otimizada (Vercel)
+- **Lucide**: ícones consistentes
+
+### Arquitetura de Componentes
+```
+src/
+├── app/           ← Páginas (App Router) — atuam como templates/pages
+├── components/
+│   ├── atoms/     ← Componentes base: Button, Badge, Card, Dialog, Input...
+│   ├── molecules/ ← Combinações: SearchBar, MenuItemCard, CategoryTabs...
+│   └── organisms/ ← Blocos funcionais: Header, CartDrawer, MenuEditor...
+├── data/          ← Dados mock (JSON) — substituível por banco
+├── lib/           ← Utilitários: db.ts, utils.ts
+└── types/         ← Interfaces TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Começando
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instalar dependências
+pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Rodar em desenvolvimento
+pnpm dev
 
-## Learn More
+# Build de produção
+pnpm build
 
-To learn more about Next.js, take a look at the following resources:
+# Iniciar produção
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Acessar
+| Página | URL |
+|--------|-----|
+| Cardápio | http://localhost:3000/cardapio/loja-exemplo |
+| Pedido | http://localhost:3000/pedido/loja-exemplo |
+| Admin | http://localhost:3000/admin |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔄 Melhoria Contínua
 
-## Deploy on Vercel
+O projeto conta com **4 cronjobs automatizados** que pesquisam e implementam melhorias continuamente:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Job | Frequência | Descrição |
+|-----|-----------|-----------|
+| 🔍 **Pesquisa Concorrentes** | Seg 08:00 | Analisa Goomer, MenuDino, iFood, reclamações |
+| 💡 **Melhorias Disruptivas** | Qua 10:00 | Propõe funcionalidades inovadoras |
+| 🎯 **Análise UX** | Sex 09:00 | Pesquisa Reclame Aqui e redes sociais |
+| ⚙️ **Implementação** | Seg 11:00 | Aplica melhorias automaticamente |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Licença
+
+MIT
