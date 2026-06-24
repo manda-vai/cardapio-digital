@@ -1,0 +1,261 @@
+[
+  {
+    "id": "item-001", "category_id": "cat-001", "store_id": "store-001",
+    "name": "Classic Burger",
+    "description": "Hambúrguer 180g, queijo cheddar, alface, tomate, cebola roxa e molho especial no pão brioche.",
+    "price": 28.90, "promotional_price": 24.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 15,
+    "modifier_groups": [
+      {
+        "id": "modgrp-001", "item_id": "item-001", "name": "Ponto da Carne", "type": "single", "is_required": true, "min_options": 1, "max_options": 1, "display_order": 1,
+        "options": [
+          { "id": "modopt-001", "group_id": "modgrp-001", "name": "Ao ponto", "price_adjustment": 0, "is_default": true, "display_order": 1 },
+          { "id": "modopt-002", "group_id": "modgrp-001", "name": "Mal passado", "price_adjustment": 0, "is_default": false, "display_order": 2 },
+          { "id": "modopt-003", "group_id": "modgrp-001", "name": "Bem passado", "price_adjustment": 0, "is_default": false, "display_order": 3 }
+        ]
+      },
+      {
+        "id": "modgrp-002", "item_id": "item-001", "name": "Adicionais", "type": "multiple", "is_required": false, "min_options": 0, "max_options": 5, "display_order": 2,
+        "options": [
+          { "id": "modopt-004", "group_id": "modgrp-002", "name": "Cheddar extra", "price_adjustment": 3.00, "is_default": false, "display_order": 1 },
+          { "id": "modopt-005", "group_id": "modgrp-002", "name": "Bacon", "price_adjustment": 5.00, "is_default": false, "display_order": 2 },
+          { "id": "modopt-006", "group_id": "modgrp-002", "name": "Ovo", "price_adjustment": 2.50, "is_default": false, "display_order": 3 },
+          { "id": "modopt-007", "group_id": "modgrp-002", "name": "Onion rings", "price_adjustment": 4.00, "is_default": false, "display_order": 4 },
+          { "id": "modopt-008", "group_id": "modgrp-002", "name": "Pão australiano", "price_adjustment": 2.00, "is_default": false, "display_order": 5 }
+        ]
+      }
+    ],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-002", "category_id": "cat-001", "store_id": "store-001",
+    "name": "Smash Burger",
+    "description": "Hambúrguer duplo 180g cada, queijo prato, picles, cebola caramelizada e molho barbecue defumado.",
+    "price": 34.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 2,
+    "dietary_tags": [], "preparation_time": 18,
+    "modifier_groups": [
+      {
+        "id": "modgrp-003", "item_id": "item-002", "name": "Adicionais", "type": "multiple", "is_required": false, "min_options": 0, "max_options": 4, "display_order": 1,
+        "options": [
+          { "id": "modopt-009", "group_id": "modgrp-003", "name": "Queijo extra", "price_adjustment": 3.00, "is_default": false, "display_order": 1 },
+          { "id": "modopt-010", "group_id": "modgrp-003", "name": "Bacon extra", "price_adjustment": 6.00, "is_default": false, "display_order": 2 },
+          { "id": "modopt-011", "group_id": "modgrp-003", "name": "Jalapeño", "price_adjustment": 2.00, "is_default": false, "display_order": 3 },
+          { "id": "modopt-012", "group_id": "modgrp-003", "name": "Molho ranch", "price_adjustment": 1.50, "is_default": false, "display_order": 4 }
+        ]
+      }
+    ],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-003", "category_id": "cat-001", "store_id": "store-001",
+    "name": "Veggie Burger",
+    "description": "Hambúrguer de grão-de-bico e quinoa, queijo vegano, alface, tomate, cebola roxa e maionese vegana.",
+    "price": 32.90, "promotional_price": 29.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 3,
+    "dietary_tags": ["vegano", "sem-glúten"], "preparation_time": 15,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-004", "category_id": "cat-001", "store_id": "store-001",
+    "name": "Monster Burger",
+    "description": "Três hambúrgueres 180g, queijo cheddar duplo, bacon, onion rings, molho especial e barbecue. Um desafio!",
+    "price": 49.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 4,
+    "dietary_tags": [], "preparation_time": 25,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-010", "category_id": "cat-002", "store_id": "store-001",
+    "name": "Batata Frita",
+    "description": "Porção de batata frita crocante com sal e orégano. Serve 2 pessoas.",
+    "price": 18.90, "promotional_price": 14.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": ["vegano"], "preparation_time": 10,
+    "modifier_groups": [
+      {
+        "id": "modgrp-004", "item_id": "item-010", "name": "Tamanho", "type": "single", "is_required": true, "min_options": 1, "max_options": 1, "display_order": 1,
+        "options": [
+          { "id": "modopt-013", "group_id": "modgrp-004", "name": "Pequena (1 pessoa)", "price_adjustment": 0, "is_default": true, "display_order": 1 },
+          { "id": "modopt-014", "group_id": "modgrp-004", "name": "Grande (2 pessoas)", "price_adjustment": 6.00, "is_default": false, "display_order": 2 },
+          { "id": "modopt-015", "group_id": "modgrp-004", "name": "Gigante (4 pessoas)", "price_adjustment": 15.00, "is_default": false, "display_order": 3 }
+        ]
+      },
+      {
+        "id": "modgrp-005", "item_id": "item-010", "name": "Adicionais", "type": "multiple", "is_required": false, "min_options": 0, "max_options": 2, "display_order": 2,
+        "options": [
+          { "id": "modopt-016", "group_id": "modgrp-005", "name": "Cheddar + bacon", "price_adjustment": 8.00, "is_default": false, "display_order": 1 },
+          { "id": "modopt-017", "group_id": "modgrp-005", "name": "Alho e parmesão", "price_adjustment": 5.00, "is_default": false, "display_order": 2 }
+        ]
+      }
+    ],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-011", "category_id": "cat-002", "store_id": "store-001",
+    "name": "Anéis de Cebola",
+    "description": "Porção de onion rings empanados, crocantes por fora e macios por dentro. Serve 2.",
+    "price": 22.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 2,
+    "dietary_tags": ["vegano"], "preparation_time": 12,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-020", "category_id": "cat-003", "store_id": "store-001",
+    "name": "Coca-Cola Lata",
+    "description": "Coca-Cola 350ml",
+    "price": 6.00, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 1,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-021", "category_id": "cat-003", "store_id": "store-001",
+    "name": "Guaraná Antarctica",
+    "description": "Guaraná Antarctica 350ml",
+    "price": 5.50, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 2,
+    "dietary_tags": [], "preparation_time": 1,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-022", "category_id": "cat-003", "store_id": "store-001",
+    "name": "Suco Natural",
+    "description": "Suco natural da polpa. Sabores: laranja, acerola, maracujá, caju.",
+    "price": 8.00, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 3,
+    "dietary_tags": ["vegano", "natural"], "preparation_time": 5,
+    "modifier_groups": [
+      {
+        "id": "modgrp-006", "item_id": "item-022", "name": "Sabor", "type": "single", "is_required": true, "min_options": 1, "max_options": 1, "display_order": 1,
+        "options": [
+          { "id": "modopt-018", "group_id": "modgrp-006", "name": "Laranja", "price_adjustment": 0, "is_default": true, "display_order": 1 },
+          { "id": "modopt-019", "group_id": "modgrp-006", "name": "Acerola", "price_adjustment": 0, "is_default": false, "display_order": 2 },
+          { "id": "modopt-020", "group_id": "modgrp-006", "name": "Maracujá", "price_adjustment": 0, "is_default": false, "display_order": 3 },
+          { "id": "modopt-021", "group_id": "modgrp-006", "name": "Caju", "price_adjustment": 0, "is_default": false, "display_order": 4 }
+        ]
+      },
+      {
+        "id": "modgrp-007", "item_id": "item-022", "name": "Açúcar", "type": "single", "is_required": true, "min_options": 1, "max_options": 1, "display_order": 2,
+        "options": [
+          { "id": "modopt-022", "group_id": "modgrp-007", "name": "Com açúcar", "price_adjustment": 0, "is_default": true, "display_order": 1 },
+          { "id": "modopt-023", "group_id": "modgrp-007", "name": "Sem açúcar", "price_adjustment": 0, "is_default": false, "display_order": 2 }
+        ]
+      }
+    ],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-023", "category_id": "cat-003", "store_id": "store-001",
+    "name": "Água Mineral",
+    "description": "Água mineral sem gás 500ml",
+    "price": 3.50, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 4,
+    "dietary_tags": [], "preparation_time": 1,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-030", "category_id": "cat-004", "store_id": "store-001",
+    "name": "Petit Gateau",
+    "description": "Bolinho de chocolate com casca e recheio cremoso, acompanha sorvete de creme.",
+    "price": 22.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 12,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-040", "category_id": "cat-005", "store_id": "store-001",
+    "name": "Combo Casal",
+    "description": "2 Classic Burgers + Batata Gigante + 2 Refrigerantes. Economia de R$ 15!",
+    "price": 79.90, "promotional_price": 64.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 20,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+
+  {
+    "id": "item-100", "category_id": "cat-010", "store_id": "store-002",
+    "name": "Mussarela",
+    "description": "Molho de tomate, mussarela, orégano.",
+    "price": 38.90, "promotional_price": 34.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 20,
+    "modifier_groups": [
+      {
+        "id": "modgrp-100", "item_id": "item-100", "name": "Tamanho", "type": "single", "is_required": true, "min_options": 1, "max_options": 1, "display_order": 1,
+        "options": [
+          { "id": "modopt-100", "group_id": "modgrp-100", "name": "Média (8 fatias)", "price_adjustment": 0, "is_default": true, "display_order": 1 },
+          { "id": "modopt-101", "group_id": "modgrp-100", "name": "Grande (12 fatias)", "price_adjustment": 12.00, "is_default": false, "display_order": 2 }
+        ]
+      },
+      {
+        "id": "modgrp-101", "item_id": "item-100", "name": "Borda", "type": "single", "is_required": false, "min_options": 0, "max_options": 1, "display_order": 2,
+        "options": [
+          { "id": "modopt-102", "group_id": "modgrp-101", "name": "Catupiry", "price_adjustment": 6.00, "is_default": false, "display_order": 1 },
+          { "id": "modopt-103", "group_id": "modgrp-101", "name": "Cheddar", "price_adjustment": 6.00, "is_default": false, "display_order": 2 },
+          { "id": "modopt-104", "group_id": "modgrp-101", "name": "Chocolate", "price_adjustment": 8.00, "is_default": false, "display_order": 3 }
+        ]
+      }
+    ],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-101", "category_id": "cat-010", "store_id": "store-002",
+    "name": "Calabresa",
+    "description": "Molho de tomate, mussarela, calabresa fatiada, cebola, orégano.",
+    "price": 42.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 2,
+    "dietary_tags": [], "preparation_time": 20,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-102", "category_id": "cat-010", "store_id": "store-002",
+    "name": "Portuguesa",
+    "description": "Molho de tomate, mussarela, presunto, ovos, cebola, pimentão, azeitona, ervilha.",
+    "price": 46.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 3,
+    "dietary_tags": [], "preparation_time": 22,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-103", "category_id": "cat-010", "store_id": "store-002",
+    "name": "Frango com Catupiry",
+    "description": "Molho de tomate, mussarela, frango desfiado, catupiry, milho, orégano.",
+    "price": 45.90, "promotional_price": 40.90,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 4,
+    "dietary_tags": [], "preparation_time": 22,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-104", "category_id": "cat-011", "store_id": "store-002",
+    "name": "Brigadeiro",
+    "description": "Chocolate, leite condensado, granulado. Cobertura de chocolate belga.",
+    "price": 44.90, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 15,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "id": "item-110", "category_id": "cat-012", "store_id": "store-002",
+    "name": "Coca-Cola 2L",
+    "description": "Refrigerante Coca-Cola 2 litros",
+    "price": 12.00, "promotional_price": null,
+    "image_url": "", "is_available": true, "is_active": true, "display_order": 1,
+    "dietary_tags": [], "preparation_time": 1,
+    "modifier_groups": [],
+    "created_at": "2026-06-01T00:00:00Z"
+  }
+]
