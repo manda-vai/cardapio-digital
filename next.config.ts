@@ -1,15 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/cardapio-digital",
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "**" },
-    ],
-  },
-  experimental: {
-    serverActions: {
-      bodySizeLimit: "5mb",
-    },
+    unoptimized: true,
   },
 };
 

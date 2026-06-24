@@ -1,9 +1,15 @@
 import { notFound } from "next/navigation";
-import { getStoreBySlug, getCategoriesByStore, getItemsByStore } from "@/lib/db";
+import { getStoreBySlug, getStores, getCategoriesByStore, getItemsByStore } from "@/lib/db";
 import { PublicMenuPageClient } from "./client";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return getStores().map((store) => ({
+    slug: store.slug,
+  }));
 }
 
 export default async function CardapioPage({ params }: PageProps) {
