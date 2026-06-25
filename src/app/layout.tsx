@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Manda-Vai" }],
   creator: "Manda-Vai",
   publisher: "Manda-Vai",
-  manifest: "/manifest.json",
+  manifest: "/cardapio-digital/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/cardapio-digital/favicon.ico", sizes: "48x48" },
+      { url: "/cardapio-digital/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/cardapio-digital/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/apple-icon.png" }],
+    apple: [{ url: "/cardapio-digital/apple-icon.png" }],
   },
 };
 
