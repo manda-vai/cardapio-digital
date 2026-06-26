@@ -1,11 +1,20 @@
-import { getStores } from "@/lib/db";
+import { getStoreById } from "@/lib/db";
+import { getUserStoreId } from "@/lib/admin";
 import { StoreSettingsForm } from "@/components/organisms/store-settings-form";
 import { notFound } from "next/navigation";
 
 export default async function AdminStorePage() {
-  const stores = getStores();
-  const mainStore = stores[0];
-  if (!mainStore) notFound();
+  const storeId = await getUserStoreId();
+
+  if (!storeId) {
+    notFound();
+  }
+
+  const store = await getStoreById(storeId);
+
+  if (!store) {
+    notFound();
+  }
 
   return (
     <div className="space-y-6">
@@ -18,7 +27,7 @@ export default async function AdminStorePage() {
         </p>
       </div>
 
-      <StoreSettingsForm store={mainStore} />
+      <StoreSettingsForm store={store} />
     </div>
   );
 }

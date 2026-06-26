@@ -1,14 +1,17 @@
-import { getStores, getCategoriesByStore, getItemsByStore } from "@/lib/db";
+import { getCategoriesByStore, getItemsByStore } from "@/lib/db";
+import { getUserStoreId } from "@/lib/admin";
 import { MenuEditor } from "@/components/organisms/menu-editor";
 import { notFound } from "next/navigation";
 
 export default async function AdminMenuPage() {
-  const stores = getStores();
-  const mainStore = stores[0];
-  if (!mainStore) notFound();
+  const storeId = await getUserStoreId();
 
-  const categories = getCategoriesByStore(mainStore.id);
-  const items = getItemsByStore(mainStore.id);
+  if (!storeId) {
+    notFound();
+  }
+
+  const categories = await getCategoriesByStore(storeId);
+  const items = await getItemsByStore(storeId);
 
   return (
     <div className="space-y-6">
@@ -17,14 +20,14 @@ export default async function AdminMenuPage() {
           Cardápio
         </h1>
         <p className="text-body-md text-on-surface-variant">
-          Gerencie os itens do cardápio de {mainStore.name}
+          Gerencie os itens do seu cardápio
         </p>
       </div>
 
       <MenuEditor
         categories={categories}
         items={items}
-        storeId={mainStore.id}
+        storeId={storeId}
       />
     </div>
   );

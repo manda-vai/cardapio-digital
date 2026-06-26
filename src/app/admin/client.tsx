@@ -8,11 +8,11 @@ import { Badge } from "@/components/atoms/badge";
 import type { Store } from "@/types";
 
 interface AdminDashboardClientProps {
-  stores: Store[];
+  store: Store;
 }
 
-export function AdminDashboardClient({ stores }: AdminDashboardClientProps) {
-  const mainStore = stores[0];
+export function AdminDashboardClient({ store }: AdminDashboardClientProps) {
+  const mainStore = store;
 
   // Mock stats
   const stats = {

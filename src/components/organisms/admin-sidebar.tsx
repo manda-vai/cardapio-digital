@@ -10,6 +10,10 @@ interface NavItem {
   icon: React.ReactNode;
 }
 
+interface AdminSidebarProps {
+  storeSlug?: string;
+}
+
 const NAV_ITEMS: NavItem[] = [
   {
     href: "/admin",
@@ -61,7 +65,7 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
-export function AdminSidebar() {
+export function AdminSidebar({ storeSlug }: AdminSidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -120,14 +124,16 @@ export function AdminSidebar() {
       {/* Bottom */}
       <div className="p-3 border-t border-outline-variant">
         <Link
-          href="/"
+          href={storeSlug ? `/cardapio/${storeSlug}` : "/"}
           className="flex items-center gap-2 px-3 py-2 text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-radius-md transition-all duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
             <polyline points="9 22 9 12 15 12 15 22" />
           </svg>
-          Site
+          Ver Cardápio
         </Link>
       </div>
     </aside>
@@ -135,7 +141,7 @@ export function AdminSidebar() {
 }
 
 // Mobile bottom nav
-export function AdminMobileNav() {
+export function AdminMobileNav({ storeSlug }: AdminSidebarProps) {
   const pathname = usePathname();
 
   return (

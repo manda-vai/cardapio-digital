@@ -2,17 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { signOut } from "@/lib/auth";
 import type { Store } from "@/types";
+import type { User } from "@supabase/supabase-js";
 
 interface HeaderProps {
   store?: Store | null;
   variant?: "public" | "admin";
+  user?: User | null;
+  storeName?: string;
   className?: string;
 }
 
-export function Header({ store, variant = "public", className }: HeaderProps) {
+export function Header({ store, variant = "public", user, storeName, className }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
+
+  async function handleSignOut() {
+    await signOut();
+    router.push("/admin/login");
+    router.refresh();
+  }
 
   if (variant === "admin") {
     return (
@@ -43,6 +55,20 @@ export function Header({ store, variant = "public", className }: HeaderProps) {
             </svg>
             Admin
           </Link>
+
+          {user && (
+            <div className="flex items-center gap-4">
+              <span className="text-body-sm text-on-surface-variant hidden sm:block">
+                {storeName || user.email}
+              </span>
+              <button
+                onClick={handleSignOut}
+                className="px-3 py-1.5 text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-radius-md transition-colors"
+              >
+                Sair
+              </button>
+            </div>
+          )}
         </div>
       </header>
     );

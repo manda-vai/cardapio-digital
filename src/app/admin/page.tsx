@@ -1,8 +1,20 @@
-import { getStores } from "@/lib/db";
+import { getStoreById } from "@/lib/db";
+import { getUserStoreId } from "@/lib/admin";
 import { AdminDashboardClient } from "./client";
+import { notFound } from "next/navigation";
 
-export default function AdminDashboardPage() {
-  const stores = getStores();
+export default async function AdminDashboardPage() {
+  const storeId = await getUserStoreId();
 
-  return <AdminDashboardClient stores={stores} />;
+  if (!storeId) {
+    notFound();
+  }
+
+  const store = await getStoreById(storeId);
+
+  if (!store) {
+    notFound();
+  }
+
+  return <AdminDashboardClient store={store} />;
 }

@@ -6,19 +6,20 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export function generateStaticParams() {
-  return getStores().map((store) => ({
+export async function generateStaticParams() {
+  const stores = await getStores();
+  return stores.map((store) => ({
     slug: store.slug,
   }));
 }
 
 export default async function PedidoPage({ params }: PageProps) {
   const { slug } = await params;
-  const store = getStoreBySlug(slug);
+  const store = await getStoreBySlug(slug);
   if (!store) notFound();
 
-  const categories = getCategoriesByStore(store.id);
-  const items = getItemsByStore(store.id);
+  const categories = await getCategoriesByStore(store.id);
+  const items = await getItemsByStore(store.id);
 
   return (
     <OrderPageClient
