@@ -1,5 +1,9 @@
 # 🍽️ Cardápio Digital
 
+[![GitHub stars](https://img.shields.io/github/stars/manda-vai/cardapio-digital)](https://github.com/manda-vai/cardapio-digital/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/manda-vai/cardapio-digital)](https://github.com/manda-vai/cardapio-digital/issues)
+[![GitHub license](https://img.shields.io/github/license/manda-vai/cardapio-digital)](https://github.com/manda-vai/cardapio-digital/blob/main/LICENSE)
+
 Plataforma de **cardápio digital** para restaurantes, lanchonetes e estabelecimentos alimentícios. Pedidos via **WhatsApp** — sem necessidade de checkout ou gateway de pagamento.
 
 ## ✨ Funcionalidades
@@ -77,9 +81,9 @@ pnpm start
 ### Acessar
 | Página | URL |
 |--------|-----|
-| Cardápio | http://localhost:3000/cardapio/loja-exemplo |
-| Pedido | http://localhost:3000/pedido/loja-exemplo |
-| Admin | http://localhost:3000/admin |
+| Cardápio | https://manda-vai.github.io/cardapio-digital/cardapio/loja-exemplo |
+| Pedido | https://manda-vai.github.io/cardapio-digital/pedido/loja-exemplo |
+| Admin | https://manda-vai.github.io/cardapio-digital/admin |
 
 ## 🔄 Melhoria Contínua
 
