@@ -47,13 +47,13 @@ export default async function AdminLayout({
   const supabase = createSupabaseServerClient(cookieStore);
 
   if (!supabase) {
-    redirect("/admin/login");
+    redirect("/login");
   }
 
   const { data: { user }, error } = await supabase.auth.getUser();
 
   if (error || !user) {
-    redirect("/admin/login");
+    redirect("/login");
   }
 
   // Get user profile with store_id
@@ -65,7 +65,7 @@ export default async function AdminLayout({
 
   // If no profile, redirect to onboarding
   if (!profile || !profile.store_id) {
-    redirect("/admin/cadastro");
+    redirect("/cadastro");
   }
 
   // Get store slug

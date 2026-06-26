@@ -198,7 +198,7 @@ export default function CadastroPage() {
           <p className="text-[var(--font-body-md)] text-[var(--color-on-surface-variant)]">
             Já tem uma conta?{" "}
             <Link
-              href="/admin/login"
+              href="/login"
               className="text-[var(--color-primary)] font-medium hover:underline"
             >
               Entrar

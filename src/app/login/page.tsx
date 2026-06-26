@@ -94,7 +94,7 @@ export default function LoginPage() {
           <p className="text-[var(--font-body-md)] text-[var(--color-on-surface-variant)]">
             Sua loja ainda não tem conta?{" "}
             <Link
-              href="/admin/cadastro"
+              href="/cadastro"
               className="text-[var(--color-primary)] font-medium hover:underline"
             >
               Cadastre-se

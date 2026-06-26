@@ -22,7 +22,7 @@ export function Header({ store, variant = "public", user, storeName, className }
 
   async function handleSignOut() {
     await signOut();
-    router.push("/admin/login");
+    router.push("/login");
     router.refresh();
   }
 
